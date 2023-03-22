@@ -11,21 +11,8 @@ img = cv2.imread('labrador.jpg')
 # Convert the image to grayscale
 gr = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-# Define the Laplacian filter kernel
-laplacian_kernel = np.array([[0, 1, 0],
-                             [1, -4, 1],
-                             [0, 1, 0]])
-
-horizontal = np.array([[0, 1, 0], [1, -4, 1], [0, 1, 0]])  # s2
-vertical = np.array([[0, 1, 0], [1, -4, 1], [0, 1, 0]])  # s1
-
 # Prewitt Operator
 h, w = gr.shape
-
-# define images with 0s
-newhorizontalImage = np.zeros((h, w))
-newverticalImage = np.zeros((h, w))
-newgradientImage = np.zeros((h, w))
 
 output = np.zeros((h, w), dtype=np.uint8)
 output3 = np.zeros((h, w), dtype=np.uint8)
